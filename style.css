@@ -50,19 +50,11 @@
 }
 
 .ex-4-square:hover {
-    visibility:hidden;
-    transition: visibility;
-    transition-delay: 3s;
+    opacity: 0;
+    transition: opacity 1s;
     transition-timing-function: linear;
 }
 
-.ex-4-square:active {
-    width: 0px;
-    height: 0px;
-    transition: width 2s, height 2s;
-    transition-delay: 1s;
-    transition-timing-function: ease;
-}
 
 /* TODO Exe 5 complete */
 
@@ -121,11 +113,11 @@
 }
 
 .ex-9-img:active {
-    width: 200px;
+    scale: (0.4);
     filter:invert(1);
     border-radius: 60%;
-    visibility:hidden;
-    transition: width 2s, invert 1s, border-radius 2s, visibility 2.2s;
+    filter: opacity(1);
+    transition: scale 2s, invert 1s, border-radius 2s, opacity 2.2s;
     transition-timing-function: ease-in;
 }
 
@@ -152,11 +144,32 @@
 
 /* TODO Exe 11 complete */
 
-.ex-11-icon:hover {
-    transform: rotate(270deg);
-    transition: rotate 1s;
-    transition-timing-function: ease-out;
+.ex-11-icon:hover{
+    animation-name: rotate-flip;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
+
+@keyframes rotate-flip {
+    0% { 
+        transform:rotate(0deg);
+    }
+    25% { 
+        transform:rotate(90deg);
+    }
+
+    50% { 
+        transform:rotate(180deg);
+    }
+    75% { 
+        transform:rotate(270deg);
+    }
+    100% { 
+        transform:rotate(0deg);
+    }
+}
+
 
 .ex-12-button, .ex-13-button {
     position: relative;
@@ -193,56 +206,137 @@
 /* TODO Exe 12 complete */
 
 .ex-12-top-white {
-    animation-name: pulse;
-    animation-duration: 2s;
-    animation-timing-function: step-end;
+    animation-name: slide;
+    animation-duration: 1s;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;  
 }
 
-@keyframes pulse {
-    0% { transform:translate(0%);}
-    50% { transform:translate(-50%);}
-    75% { transform:translate(-100%);}
-    100% { transform:translate(0%);}
+@keyframes slide {
+    0% { 
+        transform:translate(0%);
+    }
+    50% { 
+        transform:translate(-10%);
+    }
+    75% { 
+        transform:translate(-30%);
+    }
+    100% { 
+        transform:translate(0%);
+    }
 
 }
 
 .ex-12-bottom-white {
-    animation-name: pulse-rev;
-    animation-duration: 2s;
-    animation-timing-function:step-end;
+    animation-name: slide-rev;
+    animation-duration: 1s;
+    animation-timing-function:linear;
     animation-iteration-count: infinite;  
 }
 
-@keyframes pulse-rev {
-    0% { transform:translate(0%);}
-    50% { transform:translate(50%);}
-    75% { transform:translate(100%);}
-    100% { transform:translate(0%);}
+@keyframes slide-rev {
+    0% { 
+        transform:translate(0%);
+    }
+    50% { 
+        transform:translate(40%);
+    }
+    75% { 
+        transform:translate(60%);
+    }
+    100% { 
+        transform:translate(0%);
+    }
 }
 
 /* TODO Exe 13 complete */
 
 .ex-13-top-white {
     animation-name: angle-rotate;
-    animation-duration: 5s;
-    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
 @keyframes angle-rotate{
-    from { transform:translate(0%);}
-    to{ transform:translate(100%);}
+    0% { 
+        transform:translate(0%);
+    }
+    10% { 
+        transform:translate(20%);
+    }
+    20%  { 
+        transform:translate(40%);
+    }
+    30%  { 
+        transform:translate(60%);
+    }
+    40% { 
+        transform:translate(80%);
+    }
+    50% { 
+        transform:translate(100%);
+    }
+
+    60% { 
+        transform:translate(80%);
+    }
+    70% { 
+        transform:translate(60%);
+    }
+    80%  { 
+        transform:translate(40%);
+    }
+    90%  { 
+        transform:translate(20%);
+    }
+    100% { 
+        transform:translate(0%);
+    }
 }
+
 
 .ex-13-bottom-white {
         animation-name: angle-rotate-rev;
-        animation-duration: 5s;
-        animation-timing-function: ease;
+        animation-duration: 2s;
+        animation-timing-function: linear;
         animation-iteration-count: infinite;
 }
     
 @keyframes angle-rotate-rev {
-    from { transform:translate(0%);}
-    to{ transform:translate(-100%);}
+    0% { 
+        transform:translate(0%);
+    }
+    10% { 
+        transform:translate(-20%);
+    }
+    20%  { 
+        transform:translate(-40%);
+    }
+    30%  { 
+        transform:translate(-60%);
+    }
+    40% { 
+        transform:translate(-80%);
+    }
+    50% { 
+        transform:translate(-100%);
+    }
+
+    60% { 
+        transform:translate(-80%);
+    }
+    70% { 
+        transform:translate(-60%);
+    }
+    80%  { 
+        transform:translate(-40%);
+    }
+    90%  { 
+        transform:translate(-20%);
+    }
+    100% { 
+        transform:translate(0%);
+    }
 }
